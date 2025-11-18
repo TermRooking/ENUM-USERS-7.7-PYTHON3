@@ -2,30 +2,27 @@
 -------------
 **Uso del script:**
 ```bash
-SSH Username Enumeration Tool
+usage: enum_users_p3.py [-h] -t TARGET [-p PORT] [-u USERNAME]
 
-positional arguments:
-  hostname              The target hostname or ip address
+SSH User Enumeration by Leap Security (@LeapSecurity)
 
 options:
   -h, --help            show this help message and exit
-  --port PORT           The target port
-  --threads THREADS     The number of threads to be used
-  --outputFile OUTPUTFILE
-                        The output file location
-  --outputFormat {list,json,csv}
-                        The output format
-  --username USERNAME   The single username to validate
-  --userList USERLIST   The list of usernames (one per line) to enumerate through
+  -t TARGET, --target TARGET
+                        IP address of the target system
+  -p PORT, --port PORT  Set port of SSH service
+  -u USERNAME, --username USERNAME
+                        Username to check for validity.
 ```
 **Estructura basica:**
+
 **Probar un usuario**
 ```bash
-python3 en.py 172.17.0.2 --port 22 --username <username>
+python3 enum_users_p3.py 172.17.0.2  --username <username>
 ```
 **Probar multiples usuarios en una lista**
 ```bash
-python3 en.py 172.17.0.2 --port 22 --userList /home/rooking/SecLists/Usernames/top-usernames-shortlist.txt
+cat dic.txt | while read line; do python3 enum_users_p3.py 172.17.0.2 --username $line ;done
 ```
 -----------------
 # Enumeración de Usuarios en OpenSSH 7.7
