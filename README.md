@@ -18,11 +18,11 @@ options:
 
 **Probar un usuario**
 ```bash
-python3 enum_users_p3.py 172.17.0.2  --username <username>
+python3 enum_users_p3.py -t 172.17.0.2  --username <username>
 ```
 **Probar multiples usuarios en una lista**
 ```bash
-cat dic.txt | while read line; do python3 enum_users_p3.py 172.17.0.2 --username $line ;done
+cat dic.txt | while read line; do python3 enum_users_p3.py -t 172.17.0.2 --username $line ;done
 ```
 -----------------
 # Enumeración de Usuarios en OpenSSH 7.7
