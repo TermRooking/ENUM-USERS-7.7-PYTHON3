@@ -18,6 +18,15 @@ options:
   --username USERNAME   The single username to validate
   --userList USERLIST   The list of usernames (one per line) to enumerate through
 ```
+**Estructura basica:**
+**Probar un usuario**
+```bash
+python3 en.py 172.17.0.2 --port 22 --username <username>
+```
+**Probar multiples usuarios en una lista**
+```bash
+python3 en.py 172.17.0.2 --port 22 --userList /home/rooking/SecLists/Usernames/top-usernames-shortlist.txt
+```
 -----------------
 # Enumeración de Usuarios en OpenSSH 7.7
 
